@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public interface PlotBuilder {
 	//метод принимает путь до файла
 	//создает новый файл и записывает или записывает в существующий файл, если имеется, координаты в виде X	Y (два столбика. XтабуляцияY)
-    void functionGenerator(File file);
+    void functionGenerator(String path);
 	//метод принимает на вход путь до файла и возвращает ArrayList, который хранит в себе классы Pair (этот класс существет в Java)
 	//ArrayList хранит Pair; Pair хранит координаты
     ArrayList<Pair<Integer, Integer>> functionLoader(File file);
