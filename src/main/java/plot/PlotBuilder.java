@@ -11,7 +11,7 @@ public interface PlotBuilder {
     void functionGenerator(String path);
 	//метод принимает на вход путь до файла и возвращает ArrayList, который хранит в себе классы Pair (этот класс существет в Java)
 	//ArrayList хранит Pair; Pair хранит координаты
-    //ArrayList<Pair<Integer, Integer>> functionLoader(File file);
-	//если panel == Null, то создать свой и вывести в него, если нет, то вывести в переданном
+    ArrayList<Pair<Integer, Integer>> functionLoader(String path);
+	//если panel == Null, то создать свой и вывести sв него, если нет, то вывести в переданном
     //void plotPainter(ArrayList<Pair<Integer, Integer>> function, JPanel panel);
 }
