@@ -1,7 +1,8 @@
-import javafx.util.Pair;
+package plot;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.io.*;
 
 public interface PlotBuilder {
 	//метод принимает путь до файла
