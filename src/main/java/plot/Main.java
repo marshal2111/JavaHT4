@@ -9,6 +9,6 @@ public class Main {
 
         builder.functionGenerator("test.txt");
         ArrayList<Pair<Integer, Integer>> XY = builder.functionLoader("test.txt");
-        //builder.plotPainter(XY, null);
+        builder.plotPainter(XY, null);
     }
 }

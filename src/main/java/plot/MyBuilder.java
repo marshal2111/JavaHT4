@@ -4,6 +4,7 @@ import javafx.util.Pair;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.io.*;
+import java.awt.Color;
 
 public class MyBuilder implements PlotBuilder{
 	//метод принимает путь до файла
@@ -47,13 +48,11 @@ public class MyBuilder implements PlotBuilder{
             BufferedReader reader = new BufferedReader(fileReader);
 
             String str = null;
-            int iter = 0;
             while ((str = reader.readLine()) != null) {
                 String[] arrStr = str.split("\t");
                 Pair<Integer, Integer> newPair = new Pair<>(Integer.parseInt(arrStr[0]),
                                                             Integer.parseInt(arrStr[1]));
                 coords.add(newPair);
-                iter++;
             }
             fileReader.close();
             reader.close();
@@ -63,8 +62,17 @@ public class MyBuilder implements PlotBuilder{
         }
         return coords;
     }
-	// //если panel == Null, то создать свой и вывести в него, если нет, то вывести в переданном
- //    public void plotPainter(ArrayList<Pair<Integer, Integer>> function, JPanel panel) {
+	//если panel == Null, то создать свой и вывести в него, если нет, то вывести в переданном
+    public void plotPainter(ArrayList<Pair<Integer, Integer>> function, JPanel panel) {
+        JFrame frame = new JFrame("plot");
+        panel = new JPanel(); 
+        JLabel label = new JLabel(function.toString()); 
 
- //    }
+        panel.setBackground(Color.black);
+        frame.add(panel); 
+        frame.add(label);
+        frame.setSize(800, 800);
+
+        frame.show(); 
+    }
 }
